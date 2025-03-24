@@ -77,7 +77,7 @@ passport.deserializeUser(User.deserializeUser());//remove user info from session
 app.use((req,res,next)=>{
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  res.locals.currUser = req.user || null;
+  res.locals.currUser = req.user;
   next();
 })
 
